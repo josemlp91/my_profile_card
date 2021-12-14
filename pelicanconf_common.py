@@ -22,7 +22,7 @@ MENUITEMS_NAVBAR = []
 ###
 
 NAME = "José Miguel López"
-POSITION = "Software Developer - Web-based systems expert"
+POSITION = "Software Developer"
 LOCATION = "Granada - Remote"
 DESCRIPTION = "Web developer, infinite curiosity moves me to learn more every day and be alert to innovations. In ❤️ with Python. Working on different stuff."
 PROFILE_PHOTO = "/theme/images/photo.jpg"
