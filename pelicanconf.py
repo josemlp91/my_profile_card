@@ -11,3 +11,4 @@ from pelicanconf_common import *
 
 
 SITEURL = 'https://josemiguelopez.es/'
+GOOGLE_ANALYTICS_CODE = 'UA-129308889-1'
