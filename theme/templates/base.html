@@ -15,14 +15,14 @@
 
     <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
 
-    <link rel="stylesheet" href="{{ SITEURL }}theme/libs/tailwind/tailwind.min.css"/>
-    <link rel="stylesheet" href="{{ SITEURL }}theme/libs/fontawesome/all.min.css"/>
+    <link rel="stylesheet" href="{{ main_siteurl }}/theme/libs/tailwind/tailwind.min.css"/>
+    <link rel="stylesheet" href="{{ main_siteurl }}/theme/libs/fontawesome/all.min.css"/>
 
     {% assets filters="libsass", output="css/style.min.css", "scss/style.scss" %}
-    <link rel="stylesheet" href="{{ SITEURL }}{{ASSET_URL}}">
+    <link rel="stylesheet" href="{{ main_siteurl }}/{{ASSET_URL}}">
     {% endassets %}
 
-    <script src="{{ SITEURL }}theme/libs/jquery/jquery.min.js"></script>
+    <script src="{{ main_siteurl }}/theme/libs/jquery/jquery.min.js"></script>
 
     {% block extra_css %} {% endblock extra_css %}
     {% block extra_script %} {% endblock extra_script %}
