@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG | default('es') }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if article and article.author %}
+    <meta name="author" content="{{ article.author }}" />
+    {% elif page and page.author %}
+    <meta name="author" content="{{ page.author }}" />
+    {% else %}
+    <meta name="author" content="{{ AUTHOR }}" />
+    {% endif %}
+
+    {% if SITE_DESCRIPTION %}
+    <meta name="description" content="{{ SITE_DESCRIPTION }}">
+    {% endif %}
+
+    {% if TWITTER_USERNAME %}
+    <meta name="twitter:creator" content="@{{ TWITTER_USERNAME }}" />
+    {% endif %}
+
+    <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
+
+    <link rel="stylesheet" href="{{ main_siteurl }}theme/libs/tailwind/tailwind.min.css"/>
+    <link rel="stylesheet" href="{{ main_siteurl }}/theme/libs/fontawesome/all.min.css"/>
+
+    {% assets filters="libsass", output="css/style.min.css", "scss/style.scss" %}
+    <link rel="stylesheet" href="{{SITEURL}}/{{ASSET_URL}}">
+    {% endassets %}
+
+    <script src="{{ main_siteurl }}/theme/libs/jquery/jquery.min.js"></script>
+
+    {% block extra_css %} {% endblock extra_css %}
+    {% block extra_script %} {% endblock extra_script %}
+
+</head>
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover" style="background-image:url('{{ SITEURL }}{{ BACKGROUND_PHOTO }}');">
+{% block navbar %} {% endblock navbar %}
+
+{% block content %}
+
+<!-- Content -->
+
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}
+</body>
+</html>
